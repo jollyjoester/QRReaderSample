@@ -30,7 +30,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="p7l-zv-cwf">
-                                <rect key="frame" x="256" y="638" width="150" height="200"/>
+                                <rect key="frame" x="256" y="598" width="150" height="240"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dac-eP-1Ci">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="31"/>
@@ -49,8 +49,42 @@
                                             </switch>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Azh-cf-UoP">
+                                        <rect key="frame" x="0.0" y="42" width="150" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sound" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RP3-Zf-SEd">
+                                                <rect key="frame" x="0.0" y="0.0" width="101" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="X5v-i4-kc5">
+                                                <rect key="frame" x="101" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="makeSound:" destination="BYZ-38-t0r" eventType="valueChanged" id="7mG-mH-dOS"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YDx-Dn-AYX">
+                                        <rect key="frame" x="0.0" y="84" width="150" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Haptic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WnK-bK-2ZV">
+                                                <rect key="frame" x="0.0" y="0.0" width="101" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Uiq-qY-dvw">
+                                                <rect key="frame" x="101" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="makeHaptic:" destination="BYZ-38-t0r" eventType="valueChanged" id="7gV-ec-SRe"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gjO-qg-aDm">
-                                        <rect key="frame" x="0.0" y="56.5" width="150" height="31"/>
+                                        <rect key="frame" x="0.0" y="126" width="150" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No duplicate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXN-gF-pfI">
                                                 <rect key="frame" x="0.0" y="0.0" width="101" height="31"/>
@@ -67,7 +101,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V4w-9j-ASF">
-                                        <rect key="frame" x="0.0" y="113.5" width="150" height="31"/>
+                                        <rect key="frame" x="0.0" y="168" width="150" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bound" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1s-bR-Vh5">
                                                 <rect key="frame" x="0.0" y="0.0" width="101" height="31"/>
@@ -84,14 +118,14 @@
                                         </subviews>
                                     </stackView>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="RzZ-HD-xIA">
-                                        <rect key="frame" x="-2" y="170" width="154" height="31"/>
+                                        <rect key="frame" x="-2" y="210" width="154" height="31"/>
                                         <connections>
                                             <action selector="changeZoom:" destination="BYZ-38-t0r" eventType="valueChanged" id="OuZ-4c-STF"/>
                                         </connections>
                                     </slider>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="9ZE-hM-PAB"/>
+                                    <constraint firstAttribute="height" constant="240" id="9ZE-hM-PAB"/>
                                     <constraint firstAttribute="width" constant="150" id="HMP-9p-fY6"/>
                                 </constraints>
                             </stackView>

@@ -31,6 +31,8 @@ final class ViewController: UIViewController {
     private var boundingBox = CAShapeLayer()
     
     private var allowDuplicateReading: Bool = false
+    private var makeSound: Bool = false
+    private var makeHapticFeedback: Bool = false
     private var showBoundingBox: Bool = false
     private var scannedQRs = Set<String>()
     
@@ -181,26 +183,34 @@ final class ViewController: UIViewController {
     
     // MARK: Sounds
     private func playSuccessSound() {
-        let soundIdRing: SystemSoundID = 1057
-        AudioServicesPlaySystemSound(soundIdRing)
+        if makeSound == true {
+            let soundIdRing: SystemSoundID = 1057
+            AudioServicesPlaySystemSound(soundIdRing)
+        }
     }
     
     private func playErrorSound() {
-        let soundIdError: SystemSoundID = 1073
-        AudioServicesPlayAlertSound(soundIdError)
+        if makeSound == true {
+            let soundIdError: SystemSoundID = 1073
+            AudioServicesPlayAlertSound(soundIdError)
+        }
     }
     
     // MARK: Haptic feedback
     private func HapticSuccessNotification() {
-        let g = UINotificationFeedbackGenerator()
-        g.prepare()
-        g.notificationOccurred(.success)
+        if makeHapticFeedback == true {
+            let g = UINotificationFeedbackGenerator()
+            g.prepare()
+            g.notificationOccurred(.success)
+        }
     }
     
     private func HapticErrorNotification() {
-        let g = UINotificationFeedbackGenerator()
-        g.prepare()
-        g.notificationOccurred(.error)
+        if makeHapticFeedback == true {
+            let g = UINotificationFeedbackGenerator()
+            g.prepare()
+            g.notificationOccurred(.error)
+        }
     }
     
     // Draw bounding box
@@ -239,6 +249,22 @@ final class ViewController: UIViewController {
             switchTorch(.on)
         } else {
             switchTorch(.off)
+        }
+    }
+    
+    @IBAction func makeSound(_ sender: UISwitch) {
+        if sender.isOn {
+            makeSound = true
+        } else {
+            makeSound = false
+        }
+    }
+    
+    @IBAction func makeHaptic(_ sender: UISwitch) {
+        if sender.isOn {
+            makeHapticFeedback = true
+        } else {
+            makeHapticFeedback = false
         }
     }
     
